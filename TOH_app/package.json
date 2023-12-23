@@ -7,10 +7,12 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.2",
+    "blob-util": "^2.0.2",
     "bootstrap": "^5.3.2",
     "build": "^0.1.4",
     "concurrently": "^8.2.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "mongodb": "^6.2.0",
     "mongoose": "^8.0.1",
     "multer": "^1.4.5-lts.1",
@@ -19,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",
     "react-scripts": "5.0.1",
+    "twilio": "^4.20.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
