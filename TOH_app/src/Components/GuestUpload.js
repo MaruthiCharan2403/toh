@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Loader from './Loader.js'; // Assuming you have a Loader component
@@ -7,6 +7,12 @@ export default function GuestUpload() {
   const [im, setIm] = useState([]);
   const [classificationResult, setClassificationResult] = useState([]);
   const [base64String, setBase64String] = useState([]);
+  const [apiUrl, setApiUrl] = useState('');
+
+  useEffect(() => {
+    // Fetch the API URL from environment variable
+    setApiUrl(process.env.REACT_APP_API_URL || 'https://default-api-url.com');
+  }, []);
 
   const handleFileChange = (e) => {
     setClassificationResult([]);
@@ -46,7 +52,7 @@ export default function GuestUpload() {
       }
 
       try {
-        const response = await axios.post(`http://${window.location.hostname}:4000/guestUp`, formData);
+        const response = await axios.post(`${apiUrl}/guestUp`, formData);
         setClassificationResult(response.data);
       } catch (error) {
         console.log('Error occurred in making request to server side from GuestUpload.js', error);
