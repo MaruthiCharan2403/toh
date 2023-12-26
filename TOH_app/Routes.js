@@ -34,14 +34,7 @@ const dotenv = require('dotenv').config();
 const port = 4000;
 
 // ^ CORS 
-const corsOptions = {
-  origin: 'https://tiresonhighways.vercel.app', 
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-  optionsSuccessStatus: 204,
-};
-
-app.use(cors(corsOptions));
+app.use(cors())
 
 // & Multer config for TollUpload
 const TollUp = multer.diskStorage({
