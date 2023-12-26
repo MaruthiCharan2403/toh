@@ -70,7 +70,7 @@ export default function GuestUpload() {
             async function makeReq(formData) {
                 try {
                     console.log("Making request");
-                    const response = await axios.post(`http://${window.location.hostname}:4000/guestUp`, formData)
+                    const response = await axios.post(`http://localhost:4000/guestUp`, formData)
                     console.log(response.data);
                     setLoader(false);
                     setRes(true);
