@@ -94,7 +94,7 @@ app.post('/tollupload', Tollupload.single("TolluploadImage"), async (req, res) =
 
   try {
     console.log("Sending file to flask api. . . ");
-    const tollResponse_flask = await axios.post(`https://trial-409216.el.r.appspot.com/classify`, tollFlaskRequestData)
+    const tollResponse_flask = await axios.post(`https://flasktoh-409308.el.r.appspot.com/classify`, tollFlaskRequestData)
     classification_result = tollResponse_flask.data;
     console.log("Classification Result : ", classification_result);
     tollFlaskResponse = classification_result;
@@ -188,7 +188,7 @@ app.post('/guestUp', Guestupload.any(), async (req, res) => {
 
     try {
       console.log("Sending file to flask api. . . ");
-      const guestResponse_flask = await axios.post("http://127.0.0.1:5000/classify", guestFlaskRequestData)
+      const guestResponse_flask = await axios.post("https://flasktoh-409308.el.r.appspot.com/classify", guestFlaskRequestData)
       for (let i = 0; i < noOfImages; i++) {
         guestFlaskResponse.push(guestResponse_flask.data[i]);
       }
