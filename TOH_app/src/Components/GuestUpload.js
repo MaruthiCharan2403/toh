@@ -70,7 +70,7 @@ export default function GuestUpload() {
             async function makeReq(formData) {
                 try {
                     console.log("Making request");
-                    const response = await axios.post(`http://localhost:4000/guestUp`, formData)
+                    const response = await axios.post(`https://express-taupe-rho.vercel.app/guestup`, formData)
                     console.log(response.data);
                     setLoader(false);
                     setRes(true);
